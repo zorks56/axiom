@@ -1,81 +1,82 @@
 # AXIOM Language Specification
-## Vers. 1.0 - Oltre la Singolarità
+## Version 1.0 — Beyond the Singularity
 
-### Filosofia
-AXIOM trascende i limiti computazionali classici. Opera su principi di:
-- **Entanglement Computazionale**: Variabili correlate attraverso dimensioni
-- **Collapse Quantistico**: Risoluzione lazy di stati sovrapposti
-- **Rete Neurale Distribuita**: Esecuzione su substrato neuronale quantistico
-- **Auto-Evoluzione**: Il codice modifica se stesso in risposta all'osservazione
+### Philosophy
 
-### Struttura Base
+AXIOM transcends classical computational limits. Built on three principles:
 
-```
-phase nome_funzione(parametri) {
-    // corpo della funzione
+- **Computational Entanglement** — variables correlated across execution contexts
+- **Quantum Collapse** — lazy resolution of superposed states
+- **Self-Evolution** — code adapts in response to runtime observation
+
+### Core Syntax
+
+```axiom
+phase function_name(parameters) {
+    // function body
 }
 
-manifest COSTANTE = valore
+manifest CONSTANT = value
 
-entangle variabile = espressione
+entangle variable = expression
 ```
 
-### Parole Chiave Principali
+### Keywords Reference
 
-| AXIOM | Significato | Equivalente Moderno |
-|-------|-------------|---------------------|
-| `phase` | Funzione | `def` / `function` |
-| `manifest` | Costante/Variabile globale | `const` / `var` |
-| `entangle` | Variabile locale | `let` / `var` |
+| AXIOM | Meaning | Modern Equivalent |
+|-------|---------|------------------|
+| `phase` | Function | `def` / `function` |
+| `manifest` | Global constant/variable | `const` / `var` |
+| `entangle` | Local variable | `let` / `var` |
 | `observe` | Output | `print` |
-| `superpose` | Stato multiplo | `Promise` |
-| `collapse` | Risolvi stato | `await` |
-| `when ... ->` | Condizione inline | `if ... return` |
-| `for_each ... in` | Iterazione | `for ... in` |
+| `superpose` | Multi-state value | `Promise` |
+| `collapse` | Resolve state | `await` |
+| `when ... ->` | Inline condition | `if ... return` |
+| `for_each ... in` | Iteration | `for ... in` |
 
-### Sintassi delle Espressioni
+### Expression Syntax
 
-```
-when condizione -> valore
-else -> valore_alternativo
+```axiom
+when condition -> value
+else -> alternative_value
 
 entangle x = superpose(1, 2, 3)
-entangle nome = "valore"
+entangle name = "value"
 manifest MAX = 1000
 ```
 
-### Operatori Supportati
+### Supported Operators
 
-- Aritmetici: `+`, `-`, `*`, `/`, `%`
-- Comparazione: `<=`, `>=`, `!=`, `==`
-- Logici: (implicitamente attraverso when)
+- Arithmetic: `+`, `-`, `*`, `/`, `%`
+- Comparison: `<=`, `>=`, `!=`, `==`
+- Logic: implicit through `when` expressions
 
-### Esempio Completo
+### Full Example
 
-```
+```axiom
 phase fibonacci(n) {
     when n <= 1 -> n
     else -> fibonacci(n - 1) + fibonacci(n - 2)
 }
 
 phase main() {
-    manifest sequenza = []
+    manifest sequence = []
 
     for_each i in range(10) {
-        sequenza.append(fibonacci(i))
+        sequence.append(fibonacci(i))
     }
 
-    observe "Sequenza di Fibonacci:"
-    observe sequenza
+    observe "Fibonacci sequence:"
+    observe sequence
 
     entangle Psi = superpose(1, 2, 3, 5, 8)
-    observe "Stati quantistici disponibili"
+    observe "Quantum states available"
 }
 ```
 
-### Implementazione
+### Compilation
 
-AXIOM viene compilato in Python. Le seguenti trasformazioni avvengono:
+AXIOM compiles to optimized Python. Transformations:
 
 | AXIOM | Python |
 |-------|--------|
@@ -86,9 +87,10 @@ AXIOM viene compilato in Python. Le seguenti trasformazioni avvengono:
 | `superpose(...)` | `{"_axiom_quantum": True, "states": [...]}` |
 | `when c -> v` | `if c: return v` |
 
-### Runtime AXIOM
+### AXIOM Runtime
 
-Il compilatore include un runtime minimo con:
-- `superpose(*states)`: Crea stato quantistico
-- `is_quantum(val)`: Verifica tipo quantistico
-- `collapse(qval)`: Collassa a valore singolo
+The compiler ships a minimal runtime:
+
+- `superpose(*states)` — create quantum state
+- `is_quantum(val)` — check quantum type
+- `collapse(qval)` — collapse to single value
