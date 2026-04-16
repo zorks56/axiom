@@ -1,0 +1,34 @@
+// AXIOM Quantum Fibonacci
+// Anno 52026 d.C.
+
+phase fibonacci(n) {
+    when n <= 1 -> n
+    else -> fibonacci(n - 1) + fibonacci(n - 2)
+}
+
+phase main() {
+    observe "========================================"
+    observe "AXIOM QUANTUM FIBONACCI COMPUTATION"
+    observe "========================================"
+    observe ""
+
+    manifest sequenza = []
+
+    for_each i in range(10) {
+        sequenza.append(fibonacci(i))
+    }
+
+    observe "Sequenza di Fibonacci primordiale:"
+    observe sequenza
+
+    observe ""
+    observe "Creazione stati quantistici sovrapposti..."
+
+    entangle Psi = superpose(0, 1, 1, 2, 3, 5, 8, 13, 21, 34)
+    observe "Psi = superpose(0, 1, 1, 2, 3, 5, 8, 13, 21, 34)"
+
+    observe ""
+    observe "========================================"
+    observe "COMPUTAZIONE QUANTISTICA COMPLETATA"
+    observe "========================================"
+}

@@ -1,0 +1,24 @@
+// Hello World in AXIOM
+// Anno 52026 d.C.
+
+phase main()
+    observe "════════════════════════════════════════════════════"
+    observe "  ██████╗ ██╗      █████╗ ███████╗██╗  ██╗           "
+    observe "  ██╔══██╗██║     ██╔══██╗██╔════╝██║  ██║           "
+    observe "  ███████║██║     ███████║███████╗███████║           "
+    observe "  ██╔══██║██║     ██╔══██║╚════██║██╔══██║           "
+    observe "  ███████║███████╗██║  ██║███████║██║  ██║           "
+    observe "  ╚═════╝╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝           "
+    observe "                  LANGUAGE v1.0                     "
+    observe "════════════════════════════════════════════════════"
+    observe ""
+    observe "Ciao, universo! Sono AXIOM."
+    observe "Creazione: Anno 52026 d.C. - Oltre la singolarità"
+    observe ""
+    observe "Caratteristiche del linguaggio:"
+    observe "  ⊗ Entanglement Computazionale"
+    observe "  ξ  Stati Quantistici"
+    observe "  ◈  Osservatore Auto-referenziale"
+    observe "  ∞  Calcolo Transfinito"
+    observe ""
+    observe "════════════════════════════════════════════════════"
